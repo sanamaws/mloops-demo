@@ -75,6 +75,8 @@ def main():  # pragma: no cover
     tags = convert_struct(args.tags)
 
     try:
+        print("------Here are the passed kwargs---------")
+        print(args.kwargs)
         pipeline = get_pipeline_driver(args.module_name, args.kwargs)
         print("###### Creating/updating a SageMaker Pipeline with the following definition:")
         parsed = json.loads(pipeline.definition())
